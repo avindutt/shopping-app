@@ -1,9 +1,42 @@
-import React from 'react'
+import React from 'react';
+import styles from './main.module.css';
+import { useEffect } from 'react';
+import { apiData } from './mainSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import Product from './products';
 
-function main() {
+function Main() {
+    
+    const dispatch = useDispatch();
+    const product = useSelector((state) => state.main.products);
+    console.log(product);
+
+    useEffect(() => {
+        const url = 'https://my-json-server.typicode.com/avindutt/my-repo/db'
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            dispatch(apiData(data.posts));
+        });
+    }, [])
+    
+
   return (
-    <div></div>
+    <div className={styles.container}>
+        <div className={styles.heading}>Home / Clothing / <b>Men & Women T-Shirts </b></div>
+        <div className={styles.heading}><b>Men & Women T-Shirts</b> - 96248 items</div>
+        <span className={styles.heading}><b>FILTERS</b></span>
+        <hr></hr>
+        <div className={styles.items}>
+          {product.map((product) =>
+          <Product 
+          product={product}
+          key={product.id}
+          />
+          )}
+         </div>
+    </div>
   )
 }
 
-export default main;
+export default Main;

@@ -1,0 +1,34 @@
+.container {
+    height: 27.1rem;
+    width: 20rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.thumbnail img {
+    height: 20rem;
+    width: 18rem;
+}
+
+.btn {
+    position: relative;
+}
+
+.container:hover{
+    background-color: rgba(237, 237, 237, 0.878);
+    box-shadow: 1px 1px 1px 1px cadetblue;
+}
+
+.btn button {
+    border: none;
+    background-color: transparent;
+    margin: 0.3rem;
+}
+
+.btn img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
