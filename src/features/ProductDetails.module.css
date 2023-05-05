@@ -1,0 +1,142 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 1rem;
+    padding: 3rem;
+}
+
+.thumbnail {
+    height: auto;
+}
+
+.thumbnail img {
+    height: 35rem;
+}
+
+.details {
+    position: relative;
+    top: -0.7rem;
+    width: 30em;
+    height: 35rem;
+}
+
+.details > :first-child {
+    font-size: xx-large;
+}
+
+.details > :nth-child(5) {
+    font-size: x-large;
+    position: relative;
+    top: 15px;
+    font-weight: 500;
+}
+
+.details > :nth-child(6){
+    position: relative;
+    top: 10px;
+    color: green;
+    font-weight: 500;
+}
+
+.details > :nth-child(7){
+    position: relative;
+    top: 20px;
+    font-weight: 500;
+}
+
+.desc {
+    color: grey;
+    font-size: large;
+}
+
+.reviews {
+    position: relative;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    width: 7rem;
+    height: 2rem;
+    top: 10px;
+    color: grey;
+    border: 1px solid rgb(213, 213, 213);
+}
+
+hr {
+    position: relative;
+    top: 15px;
+}
+
+.size {
+    width: 24rem;
+    display: flex;
+    position: relative;
+    top: 50px;
+    gap: 1rem;
+}
+
+.size div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(213, 213, 213);
+    height: 4rem;
+    width: 4rem;
+    border-radius: 20rem;
+    font-weight: 500;
+}
+
+.addbtn {
+    position: relative;
+    top: 8em;
+    display: inline-block;
+}
+
+.addbtn button:hover {
+    background-color: blueviolet;
+    transition: all 200ms ease-in-out;
+    font-size: large;
+}
+
+.addbtn button {
+    height: 4rem;
+    width: 15rem;
+    border: none;
+    background-color: rgb(235, 42, 106);
+    color: whitesmoke;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.favbtn {
+    position: relative;
+    top: 4em;
+    left: 17rem;
+}
+
+.favbtn button {
+    height: 4rem;
+    border: 1px solid rgb(196, 196, 196);
+    width: 10rem;
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.favbtn button:hover {
+    border: 1px solid black;
+    font-size: large;
+    transition: all 200ms ease-in-out;
+}
+
+.back button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(199, 202, 205);
+}
+
+.back {
+    position: absolute;
+    right: 90rem;
+}

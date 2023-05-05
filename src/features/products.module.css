@@ -8,6 +8,11 @@
     align-items: center;
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+}
+
 .thumbnail img {
     height: 20rem;
     width: 18rem;

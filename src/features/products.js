@@ -1,14 +1,16 @@
 import React from 'react';
 import styles from './products.module.css';
 import { useDispatch } from 'react-redux';
-import { deleteItem } from './mainSlice';
+import { deleteItem, favItem, setProductDetail } from './mainSlice';
+import { Link } from 'react-router-dom';
 
 export default function Products({product}) {
 
   const dispatch = useDispatch();
 
   return (
-    <div className= {styles.container}>
+    <Link className={styles.link} to={`/product-details/${product.id}`}>
+    <div className= {styles.container} onClick={()=>dispatch(setProductDetail(product))}>
         <div className={styles.thumbnail}>
             <img src={product.thumbnail}></img>
         </div>
@@ -17,10 +19,11 @@ export default function Products({product}) {
         <div> <b>{product.price}</b> </div>
 
         <div className={styles.btn}>
-            <button><img src='https://cdn-icons-png.flaticon.com/512/10569/10569424.png'></img></button>
-            <button onClick={()=>dispatch(deleteItem(product.id))}><img src='https://cdn-icons-png.flaticon.com/512/9221/9221441.png'></img></button>
-            <button><img src='https://cdn-icons-png.flaticon.com/512/4006/4006932.png' className={styles.heart}></img></button>
+            <button onClick={onchange}><img src='https://cdn-icons-png.flaticon.com/512/10569/10569424.png'></img></button>
+            <button onClick={(e)=>{e.preventDefault(); dispatch(deleteItem(product.id));}}><img src='https://cdn-icons-png.flaticon.com/512/9221/9221441.png'></img></button>
+            <button onClick={(e)=>{e.preventDefault(); dispatch(favItem(product))}}><img src='https://cdn-icons-png.flaticon.com/512/4006/4006932.png'></img></button>
         </div>
     </div>
+    </Link>
   )
 }

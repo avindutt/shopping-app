@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Navbar () {
     return (
         <div>
@@ -8,7 +10,15 @@ function Navbar () {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+    <div>
+      <Link to="/" href="#">
+        <img style={{'height': '4.5rem'}} 
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fmyntra-logo-clipart-3.png&f=1&nofb=1&ipt=c669bc538f832f9a25ef86e1ddfe9d303b456f10caa13de0ea5f9b0909547715&ipo=images">
+        </img>
+      </Link>
+    </div>
+    
+      <ul style={{'position': 'relative', 'left': '40px'}} className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="#">MEN</a>
         </li>
@@ -41,10 +51,10 @@ function Navbar () {
           <a className="nav-link active" href=""><img style={{'height': '1.3rem'}} src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"></img></a>
         </li>
         <li className="nav-item mx-3">
-          <a className="nav-link active" href=""><img style={{'height': '1.3rem'}} src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"></img></a>
+          <Link to="/wishlist" className="nav-link active" href=""><img style={{'height': '1.3rem'}} src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"></img></Link>
         </li>
         <li className="nav-item mx-3">
-          <a className="nav-link active" href=""><img style={{'height': '1.3rem'}} src="https://cdn-icons-png.flaticon.com/512/1656/1656799.png"></img></a>
+          <Link to="/cart" className="nav-link active" href=""><img style={{'height': '1.3rem'}} src="https://cdn-icons-png.flaticon.com/512/1656/1656799.png"></img></Link>
         </li>
       </ul>
     </div>
