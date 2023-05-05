@@ -3,10 +3,20 @@ import styles from './ProductDetails.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { favItem } from './mainSlice';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ProductDetail() {    
     const dispatch = useDispatch();
     const item = useSelector((state)=>state.main.productDetail);
+    const description = item.description;
+    const [detail, setDetail] = useState(description);
+
+    const handleChange = (e) => {
+      e.preventDefault();
+      setDetail(e.target.value);
+    }
 
   return (
     <div className={styles.container}>
@@ -16,7 +26,12 @@ export default function ProductDetail() {
         <div className={styles.thumbnail}><img src={item.thumbnail}></img></div>
         <div className={styles.details}>
             <div><b>{item.title}</b></div>
-            <div className={styles.desc}>{item.description}</div>
+            <div className={styles.desc}>
+              <form onSubmit={(e)=>{toast('Updated Details!', {autoClose: 1500}); e.preventDefault()}}>
+                <input value={detail} onChange={(e)=>handleChange(e)}></input>
+                <button>UPDATE</button>
+              </form>
+            </div>
             <div className={styles.reviews}>26.4k reviews</div>
             <hr></hr>
             <div>{item.price}</div>

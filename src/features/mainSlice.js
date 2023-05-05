@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
  const initialState = {
     products: [],
     favourites: [],
-    productDetail: null
+    productDetail: []
  };
 
 export const mainSlice = createSlice({

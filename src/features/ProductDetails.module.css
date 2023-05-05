@@ -50,6 +50,27 @@
     font-size: large;
 }
 
+.desc button {
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 6.8px;
+    color: white;
+    background-color: rgb(61, 174, 174);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.desc input {
+    display: block;
+    width: 30rem;
+    outline: none;
+    border: none;
+}
+
+.desc input:focus {
+    background-color: rgb(243, 243, 243);
+}
+
 .reviews {
     position: relative;
     padding: 6px;
