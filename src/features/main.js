@@ -25,7 +25,18 @@ function Main() {
     <div className={styles.container}>
         <div className={styles.heading}>Home / Clothing / <b>Men & Women T-Shirts </b></div>
         <div className={styles.heading}><b>Men & Women T-Shirts</b> - 96248 items</div>
+        <br></br>
         <span className={styles.heading}><b>FILTERS</b></span>
+        <div className={styles.filters}>
+          <div className={styles.filter}>
+            <a href=''>Bundles</a>
+            <a href=''>Country of Origin</a>
+            <a href=''>Size</a>
+            <a href=''>Add ons</a>
+            <a href=''>Fabric</a>
+            <a href=''>+15 more</a>
+            </div>
+        </div>
         <hr></hr>
         <div className={styles.items}>
           {product.map((product) =>

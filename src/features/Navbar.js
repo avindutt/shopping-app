@@ -1,6 +1,11 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Navbar () {
+  // getting cart and cart array count from selector
+  const cart = useSelector((state) => (state.main.cart));
+  const cartCount = cart.length;
+
     return (
         <div>
             <nav style={{'height': '5.5rem'}} className="navbar navbar-expand-lg bg-body-tertiary">
@@ -56,6 +61,8 @@ function Navbar () {
         <li className="nav-item mx-3">
           <Link to="/cart" className="nav-link active" href=""><img style={{'height': '1.3rem'}} src="https://cdn-icons-png.flaticon.com/512/1656/1656799.png"></img></Link>
         </li>
+        
+        <p id="count" style={styles}>{cartCount}</p>
       </ul>
     </div>
   </div>
@@ -65,3 +72,15 @@ function Navbar () {
 }
 
 export default Navbar;
+
+const styles = {
+    backgroundColor: '#e13c3c',
+    color: 'white',
+    position: 'relative',
+    right: '29px',
+    width: '24px',
+    height: '24px',
+    textAlign: 'center',
+    borderRadius: '100%',
+    fontWeight: '500'
+}

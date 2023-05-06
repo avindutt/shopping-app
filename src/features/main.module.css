@@ -11,13 +11,26 @@
 
 .items {
     margin: none;
-    width: 80%;
+    width: 100%;
     position: relative;
-    left: 20%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 1rem;
-    /* border: 2px solid black; */
+}
+
+.filters {
+    display: inline-block;
+    margin-left: 6rem;
+}
+
+.filter {
+    display: flex;
+    gap: 7em;
+}
+
+.filter a {
+    text-decoration: none;
+    color: inherit;
 }

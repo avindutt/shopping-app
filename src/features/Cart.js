@@ -13,7 +13,7 @@ export default function Cart() {
         <div className={styles.header}><span>BAG</span> --------- ADDRESS --------- PAYMENT</div>
         <div className={styles.container}>
         {product.map((item) => (
-          <div className={styles.components}>
+          <div className={styles.components} key={item.id}>
           <div><img src={item.thumbnail}></img></div>
           <div className={styles.details}>
             <div><b>{item.title}</b></div>
