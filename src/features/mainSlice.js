@@ -41,10 +41,16 @@ export const mainSlice = createSlice({
             const { item, size } = action.payload;
             const itemWithSize = {...item, size: size};
             state.cart = [...state.cart, itemWithSize];
+        },
+        removeCart: (state, action) => {
+            state.cart = state.cart.filter((item) => {
+                return item.id != action.payload;
+            })
+            toast("Item removed from Cart", {autoClose: 2300, draggablePercent: 60});
         }
     }
 });
 
-export const {apiData, deleteItem, favItem, setProductDetail, removeFavItem, addToCart} = mainSlice.actions;
+export const {apiData, deleteItem, favItem, setProductDetail, removeFavItem, addToCart, removeCart} = mainSlice.actions;
 
 export default mainSlice.reducer;

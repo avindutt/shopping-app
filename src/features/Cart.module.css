@@ -1,0 +1,81 @@
+.header span {
+    color: rgb(54, 181, 4);
+    text-decoration: underline;
+}
+
+.header {
+    font-size: larger;
+    position: absolute;
+    left: 33.6%;
+    top: 6em;
+    transform: translate(-0%, -0%);
+    padding: 10px;
+    color: rgb(105, 104, 104);
+    letter-spacing: 3px;
+}
+
+.container {
+    position: relative;
+    top: 6em;
+    left: 22.5%;
+    margin-top: 3rem;
+    width: 50rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.components {
+    border: 1px solid rgb(194, 189, 189);
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px grey;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1rem;
+}
+
+.components img {
+    height: 15rem;
+    display: inline-block;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details > :first-child {
+    font-size: x-large;
+    letter-spacing: 2px;
+}
+
+.details > :nth-child(2) {
+    color: grey;
+    letter-spacing: 2px;
+}
+
+.details > :nth-child(3) {
+    color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+}
+
+.details > :nth-child(4) {
+    letter-spacing: 2px;
+    font-size: larger;
+    color: rgb(245, 46, 96);
+}
+
+.details button {
+    border: none;
+    width: fit-content;
+    color: aliceblue;
+    background-color: black;
+    font-size: large;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
