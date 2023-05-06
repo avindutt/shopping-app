@@ -5,7 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
  const initialState = {
     products: [],
     favourites: [],
-    productDetail: []
+    productDetail: [],
+    cart: []
  };
 
 export const mainSlice = createSlice({
@@ -23,16 +24,27 @@ export const mainSlice = createSlice({
         },
         favItem: (state, action) => {
             state.favourites = [...state.favourites, action.payload]
-            console.log(state.favourites);
             toast("Hurray! Item added to Wishlist", {autoClose: 2300, draggablePercent: 60});
+        },
+        removeFavItem: (state, action) => {
+            state.favourites = state.favourites.filter((item) => {
+                return item.id != action.payload;
+            })
+            toast("Item removed from Wishlist", {autoClose: 2300, draggablePercent: 60});
         },
         setProductDetail: (state, action) => {
             state.productDetail = action.payload;
             console.log(state.productDetail);
+        },
+        addToCart: (state, action) => {
+            // collecting the values passed by dispatch by destructuring
+            const { item, size } = action.payload;
+            const itemWithSize = {...item, size: size};
+            state.cart = [...state.cart, itemWithSize];
         }
     }
 });
 
-export const {apiData, deleteItem, favItem, setProductDetail} = mainSlice.actions;
+export const {apiData, deleteItem, favItem, setProductDetail, removeFavItem, addToCart} = mainSlice.actions;
 
 export default mainSlice.reducer;

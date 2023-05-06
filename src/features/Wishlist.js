@@ -1,16 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './wishlist.module.css';
+import { removeFavItem } from './mainSlice';
 
 export default function Wishlist() {
 
   const product = useSelector((state) => state.main.favourites);
+  const dispatch = useDispatch();
 
   return (
     <div>
-      {product.map(item => {
-        return (
-          <div className={styles.container}>
+      {product.length > 0 ? (
+        product.map(item => (
+          <div className={styles.container} key={item.id}>
             <div className={styles.thumbnail}><img src={item.thumbnail}></img></div>
             <div className={styles.details}>
               <div><b>{item.title}</b></div>
@@ -30,13 +32,17 @@ export default function Wishlist() {
               <div className={styles.addbtn}>
                 <button>ADD TO BAG</button>
               </div>
-              <div className={styles.favbtn}>
-                <button>Wishlist</button>
+              <div className={styles.favbtn} onClick={()=> dispatch(removeFavItem(item.id))}>
+                <button>Remove from Wishlist</button>
               </div>
             </div>
           </div>
-        )
-      })}
+        ))
+    ) : (
+          <div className={styles.message}>
+            Oops! No items in wishlist
+          </div>
+      )}
     </div>
   )
 }

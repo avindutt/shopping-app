@@ -128,3 +128,9 @@ hr {
     font-size: large;
     transition: all 200ms ease-in-out;
 }
+
+.message {
+    font-size: xx-large;
+    text-align: center;
+    color: rgb(96, 96, 101);
+}

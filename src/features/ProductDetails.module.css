@@ -161,3 +161,17 @@ hr {
     position: absolute;
     right: 90rem;
 }
+
+input[type="radio"] {
+    visibility: hidden;
+}
+
+label {
+    margin-right: 12.4px;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + span{
+    color: #f02626;
+    font-size: larger;
+  }
