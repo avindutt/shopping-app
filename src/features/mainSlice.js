@@ -4,6 +4,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
  const initialState = {
     products: [],
+    sort: {
+        sortBy: "",
+        sortOrder: ""
+    },
     favourites: [],
     productDetail: [],
     cart: []
@@ -15,7 +19,13 @@ export const mainSlice = createSlice({
     reducers: {
         apiData: (state, action) => {
             state.products = action.payload
-        },  
+        },
+        // sort: (state, action) => {
+        //     const { sortBy, sortOrder } = action.payload;
+        //     state.sort.sortBy = sortBy;
+        //     state.sort.sortOrder = sortOrder;
+        //     console.log(JSON.parse(JSON.stringify(state)))
+        // },  
         deleteItem: (state, action) => {
             state.products = state.products.filter((item) => {
                 return item.id != action.payload;
@@ -51,6 +61,6 @@ export const mainSlice = createSlice({
     }
 });
 
-export const {apiData, deleteItem, favItem, setProductDetail, removeFavItem, addToCart, removeCart} = mainSlice.actions;
+export const {apiData, sort, deleteItem, favItem, setProductDetail, removeFavItem, addToCart, removeCart} = mainSlice.actions;
 
 export default mainSlice.reducer;
