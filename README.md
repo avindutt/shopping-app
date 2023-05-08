@@ -1,3 +1,5 @@
+CLICK ON MYNTRA LOGO AFTER REACHING THE WEBSITE TO SEE THE PRODUCTS. THERE IS A PROBLEM WITH GITHUB PAGES FETCHING THE DATA WHEN WEBSITE LOADS FOR THE FIRST TIME.
+
 # Getting Started with Create React App and Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
