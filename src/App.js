@@ -7,6 +7,7 @@ import ProductDetail from './features/ProductDetail';
 import Cart from './features/Cart';
 import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux';
+import AddProduct from './features/AddProduct';
 
 function App() {
   const product = useSelector((state) => state.ProductDetail);
@@ -19,6 +20,7 @@ function App() {
       <Route path='/wishlist' element={<Wishlist/>}></Route>
       <Route path='/product-details/:id' element={<ProductDetail/>}></Route>
       <Route path='/cart' element={<Cart/>}></Route>
+      <Route path='/addProduct' element={<AddProduct/>}></Route>
      </Routes>
     </div>
   );
